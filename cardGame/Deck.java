@@ -16,4 +16,8 @@ public class Deck {
     public void addCard(Card card) {
         this.deck.add(card);
     }
+
+    public Card dealCard() {
+        return this.deck.remove(0);
+    }
 }

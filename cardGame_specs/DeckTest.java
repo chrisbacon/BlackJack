@@ -25,4 +25,13 @@ public class DeckTest {
         deck.addCard(card);
         assertEquals(1, deck.getSize());
     }
+
+    @Test
+    public void canDealCard() {
+        deck.addCard(card);
+
+        Card dealtCard = deck.dealCard();
+        assertEquals(card, dealtCard);
+        assertEquals(0, deck.getSize());
+    }
 }
