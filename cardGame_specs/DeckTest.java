@@ -34,4 +34,11 @@ public class DeckTest {
         assertEquals(card, dealtCard);
         assertEquals(0, deck.getSize());
     }
+
+    @Test
+    public void canBuildDeck() {
+        deck.buildDeck();
+
+        assertEquals(52, deck.getSize());
+    }
 }
