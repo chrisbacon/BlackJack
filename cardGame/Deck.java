@@ -9,7 +9,11 @@ public class Deck {
         this.deck = new ArrayList<Card>();    
     }
 
-    public int getDeckSize() {
+    public int getSize() {
         return this.deck.size();
-    }    
+    }
+
+    public void addCard(Card card) {
+        this.deck.add(card);
+    }
 }
