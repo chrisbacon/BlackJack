@@ -3,22 +3,22 @@ package cardGame;
 import java.util.*;
 
 public class Deck {
-    ArrayList<Card> deck;
+    ArrayList<Card> cards;
 
     public Deck() {
-        this.deck = new ArrayList<Card>();
+        this.cards = new ArrayList<Card>();
     }
 
     public int getSize() {
-        return this.deck.size();
+        return this.cards.size();
     }
 
     public void addCard(Card card) {
-        this.deck.add(card);
+        this.cards.add(card);
     }
 
     public Card dealCard() {
-        return this.deck.remove(0);
+        return this.cards.remove(0);
     }
 
     public void buildDeck() {

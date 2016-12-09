@@ -1,8 +1,9 @@
 package cardGame;
 
-public class Dealer {
+public class Dealer implements Dealable {
 
     private Deck deck;
+    private Hand hand;
 
     public Dealer(Deck deck) {
         this.deck = deck;
@@ -16,5 +17,8 @@ public class Dealer {
     public void dealCardTo(Dealable receipient) {
         Card dealtCard = this.deck.dealCard();
         receipient.addCardToHand(dealtCard);
+    }
+
+    public void addCardToHand(Card card) {
     }
 }
