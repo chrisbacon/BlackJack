@@ -6,8 +6,15 @@ import cardGame.*;
 
 public class RulesTest {
 
+    Card card;
+
+    @Before
+    public void before() {
+        card = new Card(Suit.SPADES, Rank.ACE);
+    }
+
     @Test
     public void canGetCardValue() {
-        assertEquals(11, Rules.getRankValue(Rank.ACE));
+        assertEquals(11, Rules.getCardValue(card));
     }
 }

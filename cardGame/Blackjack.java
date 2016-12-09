@@ -31,11 +31,11 @@ public class Blackjack {
     }
 
     public String findWinner() {
-        int dealerScore = dealer.getHandValue();
         int playerScore = player.getHandValue();
-        if (playerScore > dealerScore) {
+        int dealerScore = player.getHandValue();
+        if (Rules.didPlayerWin(this.player, this.dealer)) {
             return "Player wins with " + playerScore + " against " + dealerScore + "!";
-        } else if (dealerScore > playerScore) {
+        } else if (Rules.didPlayerWin(this.player, this.dealer)) {
             return "Dealer wins with " + dealerScore + " against " + playerScore + "!";
         } else {
             return "Draw! Player had " + playerScore + " and dealer had " + dealerScore + "!";
