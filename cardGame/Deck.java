@@ -2,19 +2,10 @@ package cardGame;
 
 import java.util.*;
 
-public class Deck {
-    ArrayList<Card> cards;
+public class Deck extends CardCollection {
 
     public Deck() {
-        this.cards = new ArrayList<Card>();
-    }
-
-    public int getSize() {
-        return this.cards.size();
-    }
-
-    public void addCard(Card card) {
-        this.cards.add(card);
+        super();
     }
 
     public Card dealCard() {
