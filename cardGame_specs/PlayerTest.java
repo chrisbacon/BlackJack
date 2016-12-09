@@ -38,11 +38,13 @@ public class PlayerTest {
         player.addCardToHand(card1);
         player.addCardToHand(card2);
 
-        Dealer dealer = mock(Dealer.class);
+
+        Deck deck = new Deck();
+        Dealer dealer = new Dealer("Logan", deck);
 
         player.returnHandToDealer(dealer);
 
         assertEquals(0, player.getHandSize());
-        verify(dealer, times(2)).returnHandToDealer(dealer);
+        assertEquals(2, dealer.getDeckSize());
     }
 }

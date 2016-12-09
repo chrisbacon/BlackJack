@@ -33,7 +33,7 @@ public class HandTest {
         hand.addCard(card);
 
         //method being tested
-        hand.returnCardsTo(dealerMock);
+        hand.returnCardsToDealer(dealerMock);
 
         //assertions
         assertEquals(0, hand.getSize());

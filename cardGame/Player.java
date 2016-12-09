@@ -22,7 +22,7 @@ public class Player {
     }
 
     public void returnHandToDealer(Dealer dealer) {
-        
+        this.hand.returnCardsToDealer(dealer);
     }
 
 }

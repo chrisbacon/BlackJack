@@ -8,7 +8,7 @@ public class Hand extends CardCollection {
         super();
     }
 
-    public void returnCardsTo(Dealer dealer){
+    public void returnCardsToDealer(Dealer dealer){
         while (getSize() > 0) {
             Card cardRemoved = this.cards.remove(0);
             dealer.addCardToDeck(cardRemoved); 

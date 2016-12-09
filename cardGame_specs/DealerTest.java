@@ -17,13 +17,13 @@ public class DealerTest {
 
     @Test
     public void canGetDeckSize() {
-        assertEquals(52, dealer.getDeckSize());
+        assertEquals(0, dealer.getDeckSize());
     }
 
     @Test
     public void canAddCardToDeck() {
         Card card = mock(Card.class);
         dealer.addCardToDeck(card);
-        assertEquals(53, dealer.getDeckSize());
+        assertEquals(1, dealer.getDeckSize());
     }
 }

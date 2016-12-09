@@ -7,7 +7,6 @@ public class Dealer extends Player {
     public Dealer(String name, Deck deck) {
         super(name);
         this.deck = deck;
-        this.deck.buildDeck();
     }
 
     public int getDeckSize() {
