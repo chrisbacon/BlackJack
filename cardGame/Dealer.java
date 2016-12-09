@@ -4,7 +4,8 @@ public class Dealer extends Player {
 
     private Deck deck;
 
-    public Dealer(Deck deck) {
+    public Dealer(String name, Deck deck) {
+        super(name);
         this.deck = deck;
         this.deck.buildDeck();
     }

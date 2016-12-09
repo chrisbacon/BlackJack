@@ -2,16 +2,27 @@ package cardGame;
 
 public class Player {
     private Hand hand;
+    private String name;
 
-    public Player() {
+    public Player(String name) {
+        this.name = name;
         this.hand = new Hand();
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getHandSize() {
+        return this.hand.getSize();
     }
 
     public void addCardToHand(Card card) {
         this.hand.addCard(card);
     }
 
-    public void returnHandToDealer(Dealer dealer){
+    public void returnHandToDealer(Dealer dealer) {
+        
     }
 
 }

@@ -12,7 +12,7 @@ public class DealerTest {
     @Before
     public void before() {
         deck = new Deck();
-        dealer = new Dealer(deck);
+        dealer = new Dealer("Logan", deck);
     }
 
     @Test

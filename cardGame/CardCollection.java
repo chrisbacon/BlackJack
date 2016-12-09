@@ -2,7 +2,7 @@ package cardGame;
 import java.util.*;
 
 public abstract class CardCollection {
-    private ArrayList<Card> cards;
+    ArrayList<Card> cards;
 
     public CardCollection() {
         this.cards = new ArrayList<Card>();
