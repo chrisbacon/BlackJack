@@ -31,8 +31,8 @@ public class Blackjack {
     }
 
     public String findWinner() {
-        int dealerScore = dealer.getHandValue(this.rules);
-        int playerScore = player.getHandValue(this.rules);
+        int dealerScore = dealer.getHandValue();
+        int playerScore = player.getHandValue();
         if (playerScore > dealerScore) {
             return "Player wins with " + playerScore + " against " + dealerScore + "!";
         } else if (dealerScore > playerScore) {

@@ -55,9 +55,7 @@ public class PlayerTest {
         player.addCardToHand(card1);
         player.addCardToHand(card2);
 
-        Rules rules = new Rules();
-
-        assertEquals(16, player.getHandValue(rules));
+        assertEquals(16, player.getHandValue());
 
     }
 }

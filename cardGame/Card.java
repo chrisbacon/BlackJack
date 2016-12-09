@@ -22,7 +22,7 @@ public class Card {
         return this.rank;
     }
 
-    public int getValue(Rules rules) {
+    public int getValue() {
         return Rules.getRankValue(this.rank);
     }
 }

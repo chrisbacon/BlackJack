@@ -46,9 +46,7 @@ public class HandTest {
         Card card2 = new Card(Suit.HEARTS, Rank.FIVE);
         hand.addCard(card2);
 
-        Rules rules = new Rules();
-
-        assertEquals(16, hand.getValue(rules));
+        assertEquals(16, hand.getValue());
 
     }
 }
