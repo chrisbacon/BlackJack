@@ -39,4 +39,16 @@ public class HandTest {
         assertEquals(0, hand.getSize());
         verify(dealerMock, times(1)).addCardToDeck(card);
     }
+
+    @Test
+    public void canGetHandValue() {
+        hand.addCard(card);
+        Card card2 = new Card(Suit.HEARTS, Rank.FIVE);
+        hand.addCard(card2);
+
+        Rules rules = new Rules();
+
+        assertEquals(16, hand.getHandValue(rules));
+
+    }
 }
