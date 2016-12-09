@@ -41,14 +41,14 @@ public class HandTest {
     }
 
     @Test
-    public void canGetHandValue() {
+    public void canGetValue() {
         hand.addCard(card);
         Card card2 = new Card(Suit.HEARTS, Rank.FIVE);
         hand.addCard(card2);
 
         Rules rules = new Rules();
 
-        assertEquals(16, hand.getHandValue(rules));
+        assertEquals(16, hand.getValue(rules));
 
     }
 }
