@@ -17,4 +17,14 @@ public class CardTest {
     public void canShowFace() {
         assertEquals("ACE of SPADES", card.showFace());
     }
+
+    @Test
+    public void canGetSuit() {
+        assertEquals(Suit.SPADES, card.getSuit());
+    }
+
+    @Test
+    public void canGetRank() {
+        assertEquals(Rank.ACE, card.getRank());
+    }
 }

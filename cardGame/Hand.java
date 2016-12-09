@@ -14,4 +14,12 @@ public class Hand extends CardCollection {
             dealer.addCardToDeck(cardRemoved); 
         }       
     }
+
+    public int getHandValue(Rules rules) {
+        int total = 0;
+        for (Card card : this.cards) {
+            total += rules.getCardValue(card);
+        }
+        return total;
+    }
 }

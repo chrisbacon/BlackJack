@@ -13,4 +13,12 @@ public class Card {
     public String showFace() {
         return this.rank + " of " + this.suit;
     }
+
+    public Suit getSuit() {
+        return this.suit;
+    }
+
+    public Rank getRank() {
+        return this.rank;
+    }
 }
