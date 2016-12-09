@@ -2,17 +2,17 @@ package cardGame;
 import java.util.*;
 
 public abstract class CardCollection {
-    ArrayList<Card> cards;
+    private ArrayList<Card> cards;
 
-        public CardCollection() {
-            this.cards = new ArrayList<Card>();
-        }
+    public CardCollection() {
+        this.cards = new ArrayList<Card>();
+    }
 
-        public int getSize() {
-            return this.cards.size();
-        }
+    public int getSize() {
+        return this.cards.size();
+    }
 
-        public void addCard(Card card) {
-            this.cards.add(card);
-        }
+    public void addCard(Card card) {
+        this.cards.add(card);
+    }
 }
