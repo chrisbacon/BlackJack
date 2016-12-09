@@ -11,8 +11,8 @@ public class RulesTest {
 
     @Before
     public void before() {
-        int [] values = new int[]{2,3,4,5,6,7,8,9,10,10,10,10,11};
-        rules = new Rules(values);
+        
+        rules = new Rules();
         card = new Card(Suit.SPADES, Rank.ACE);
     }
 
