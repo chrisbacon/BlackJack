@@ -20,4 +20,8 @@ public class Deck extends CardCollection {
             }
         }
     }
+
+    public void shuffle() {
+        Collections.shuffle(this.cards);
+    }
 }

@@ -13,6 +13,10 @@ public class Dealer extends Player {
         return this.deck.getSize();
     }
 
+    public void shuffle() {
+        this.deck.shuffle();
+    }
+
     public void dealCardTo(Player receipient) {
         Card dealtCard = this.deck.dealCard();
         receipient.addCardToHand(dealtCard);
