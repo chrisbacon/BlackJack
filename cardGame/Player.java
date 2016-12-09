@@ -25,7 +25,7 @@ public class Player {
         this.hand.returnCardsToDealer(dealer);
     }
 
-    public int getHandValue(Rules rules) {
-        return this.hand.getValue(rules);
+    public int getHandValue() {
+        return this.hand.getValue();
     }
 }
