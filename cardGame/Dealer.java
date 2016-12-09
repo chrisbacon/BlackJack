@@ -12,4 +12,9 @@ public class Dealer {
     public int getDeckSize() {
         return this.deck.getSize();
     }
+
+    public void dealCardTo(Dealable receipient) {
+        Card dealtCard = this.deck.dealCard();
+        receipient.addCardToHand(dealtCard);
+    }
 }
