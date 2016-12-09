@@ -16,7 +16,7 @@ public class Rules{
         }
     } 
 
-    public int getCardValue(Card card) {
-        return singleCardValues.get(card.getRank());
+    public int getRankValue(Rank rank) {
+        return singleCardValues.get(rank);
     }
 }

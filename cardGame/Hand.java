@@ -18,7 +18,7 @@ public class Hand extends CardCollection {
     public int getValue(Rules rules) {
         int total = 0;
         for (Card card : this.cards) {
-            total += rules.getCardValue(card);
+            total += card.getValue(rules);
         }
         return total;
     }

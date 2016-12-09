@@ -21,4 +21,8 @@ public class Card {
     public Rank getRank() {
         return this.rank;
     }
+
+    public int getValue(Rules rules) {
+        return rules.getRankValue(this.rank);
+    }
 }

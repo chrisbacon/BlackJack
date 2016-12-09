@@ -18,6 +18,6 @@ public class RulesTest {
 
     @Test
     public void canGetCardValue() {
-        assertEquals(11, rules.getCardValue(card));
+        assertEquals(11, card.getValue(rules));
     }
 }
