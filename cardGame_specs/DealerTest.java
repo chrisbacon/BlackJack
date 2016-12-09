@@ -19,4 +19,11 @@ public class DealerTest {
     public void canGetDeckSize() {
         assertEquals(52, dealer.getDeckSize());
     }
+
+    @Test
+    public void canAddCardToDeck() {
+        Card card = mock(Card.class);
+        dealer.addCardToDeck(card);
+        assertEquals(53, dealer.getDeckSize());
+    }
 }

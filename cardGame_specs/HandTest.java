@@ -19,4 +19,24 @@ public class HandTest {
     public void canGetSize() {
         assertEquals(0, hand.getSize());
     }
+
+    @Test
+    public void canAddCard() {
+        hand.addCard(card);
+        assertEquals(1, hand.getSize());
+    }
+
+    @Test
+    public void canReturnCardsToDealer() {
+        //create mock dealer, add card to hand.
+        Dealer dealerMock = mock(Dealer.class);
+        hand.addCard(card);
+
+        //method being tested
+        hand.returnCardsTo(dealerMock);
+
+        //assertions
+        assertEquals(0, hand.getSize());
+        verify(dealerMock, times(1)).addCardToDeck(card);
+    }
 }

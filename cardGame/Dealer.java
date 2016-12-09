@@ -8,6 +8,8 @@ public class Dealer implements Dealable {
     public Dealer(Deck deck) {
         this.deck = deck;
         this.deck.buildDeck();
+
+        this.hand = new Hand();
     }
 
     public int getDeckSize() {
@@ -19,6 +21,13 @@ public class Dealer implements Dealable {
         receipient.addCardToHand(dealtCard);
     }
 
+    public void addCardToDeck(Card card) {
+        this.deck.addCard(card);
+    }
+
     public void addCardToHand(Card card) {
+    }
+
+    public void returnHandToDealer(Dealer dealer){
     }
 }

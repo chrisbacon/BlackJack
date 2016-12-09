@@ -38,7 +38,6 @@ public class DeckTest {
     @Test
     public void canBuildDeck() {
         deck.buildDeck();
-
         assertEquals(52, deck.getSize());
     }
 }
