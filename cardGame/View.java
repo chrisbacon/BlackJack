@@ -6,8 +6,8 @@ public class View {
     public View(Log log) {
         this.log = log;
     }
-    public void displayCurrentPlayerHand() {
-        Player player = log.getCurrentPlayer();
+    public void displayPlayerHand() {
+        Player player = log.getPlayer();
         System.out.println(player.getName() + ": " + player.getHandString());
     }
 
@@ -19,11 +19,18 @@ public class View {
     public void displayResult() {
         Player winner = this.log.getWinner();
         Player loser = this.log.getLoser();
-        if (!this.log.getDrawFlag()) {
-            System.out.println(winner.getName() + " wins with " + winner.getHandValue() + " against " + loser.getHandValue() + "!");
-        } else {
-            System.out.println("Draw! Both the player and the dealer have " + winner.getHandValue()) ; 
-        }
+        String output;
 
+        if (!this.log.getDrawFlag()) {
+            output = winner.getName() + " wins with " + winner.getHandValue() + " against " + loser.getHandValue() + "!";
+        } else {
+            output = "Draw! Both the player and the dealer have " + winner.getHandValue();
+        }
+        System.out.println(); 
+
+    }
+
+    public boolean getPlayerMove() {
+        return true;
     }
 }

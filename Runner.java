@@ -10,10 +10,19 @@ public class Runner{
     game.addPlayer("Chris");
     game.addDealer("Logan");
 
-    game.dealCardsToPlayers();
+    game.setUp();
+    game.dealCardToPlayer();
+    game.dealCardToDealer();
+    
+    boolean keepPlaying = true;
+    while (keepPlaying) {
+        game.dealCardToPlayer();
+        view.displayPlayerHand();
+        if (game.isPlayerBust()) break ;
+        keepPlaying = view.getPlayerMove();
+    }
 
-    game.nextTurn();
-    view.displayCurrentPlayerHand();
+    //game.runDealerTurn();
     view.displayDealerHand();
 
     game.setResult();

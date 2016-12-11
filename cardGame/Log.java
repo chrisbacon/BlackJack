@@ -3,7 +3,7 @@ package cardGame;
 public class Log {
     private Player winner;
     private Player loser;
-    private Player currentPlayer;
+    private Player player;
     private Dealer dealer;
     private boolean draw;
 
@@ -14,7 +14,7 @@ public class Log {
         this.dealer = dealer;
     }
 
-    public Dealer getDealer() {
+    public Dealer getDealer(){
         return this.dealer;
     }
 
@@ -22,16 +22,16 @@ public class Log {
         this.draw = flag;
     }
 
-    public boolean getDrawFlag () {
+    public boolean getDrawFlag (){
         return this.draw;
     }
 
-    public void setCurrentPlayer(Player player) {
-        this.currentPlayer = player;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public Player getCurrentPlayer() {
-        return this.currentPlayer;
+    public Player getPlayer() {
+        return this.player;
     }
 
     public void setWinner(Player winner) {

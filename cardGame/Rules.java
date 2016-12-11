@@ -18,6 +18,10 @@ public class Rules{
         return total;
     }
 
+    public static boolean checkForBust(Player player) {
+        return player.getHandValue() > 21;
+    }
+
     public static boolean didDraw(Player player, Dealer dealer) {
         return player.getHandValue() == dealer.getHandValue();
     }
