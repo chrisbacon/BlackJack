@@ -3,14 +3,21 @@ import java.util.*;
 
 public class Runner{
   public static void main(String[] args){
-    Blackjack game = new Blackjack();
+    Log log = new Log();
+    Blackjack game = new Blackjack(log);
+    View view = new View(log);
 
     game.addPlayer("Chris");
     game.addDealer("Logan");
 
     game.dealCardsToPlayers();
 
-    System.out.println(game.findWinner());
+    game.nextTurn();
+    view.displayCurrentPlayerHand();
+    view.displayDealerHand();
+
+    game.setResult();
+    view.displayResult();
   }
     
 }

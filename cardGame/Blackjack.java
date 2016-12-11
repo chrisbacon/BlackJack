@@ -7,11 +7,12 @@ public class Blackjack {
     private Dealer dealer;
     private Deck deck;
     private Rules rules;
+    private Log log;
 
-    public Blackjack() {
+    public Blackjack(Log log) {
         this.deck = new Deck();
         this.deck.buildDeck(); 
-        this.rules = new Rules();
+        this.log = log;
     } 
 
     public void addPlayer(String name) {
@@ -20,9 +21,11 @@ public class Blackjack {
 
     public void addDealer(String name) {
         this.dealer = new Dealer(name, this.deck);
+        this.log.setDealer(this.dealer);
     }
 
     public void dealCardsToPlayers() {
+        this.log.setDrawFlag(false);
         this.dealer.shuffle();
         this.dealer.dealCardTo(this.player);
         this.dealer.dealCardTo(this.dealer);
@@ -30,15 +33,22 @@ public class Blackjack {
         this.dealer.dealCardTo(this.dealer);
     }
 
-    public String findWinner() {
-        int playerScore = player.getHandValue();
-        int dealerScore = player.getHandValue();
-        if (Rules.didPlayerWin(this.player, this.dealer)) {
-            return "Player wins with " + playerScore + " against " + dealerScore + "!";
+    public void nextTurn() {
+        this.log.setCurrentPlayer(this.player);
+    }
+
+    public void setResult() {
+        if (Rules.didDraw(this.player, this.dealer)) {
+            this.log.setDrawFlag(true);
+            this.log.setWinner(dealer);
+            this.log.setLoser(player);
         } else if (Rules.didPlayerWin(this.player, this.dealer)) {
-            return "Dealer wins with " + dealerScore + " against " + playerScore + "!";
+            this.log.setWinner(player);
+            this.log.setLoser(dealer);
         } else {
-            return "Draw! Player had " + playerScore + " and dealer had " + dealerScore + "!";
+            this.log.setWinner(dealer);
+            this.log.setLoser(player);
+            
         }
     }
 }

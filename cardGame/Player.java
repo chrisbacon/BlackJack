@@ -28,4 +28,8 @@ public class Player {
     public int getHandValue() {
         return this.hand.getValue();
     }
+
+    public String getHandString() {
+        return this.hand.toString();
+    }
 }
