@@ -14,8 +14,8 @@ public class CardTest {
     }
 
     @Test
-    public void canShowFace() {
-        assertEquals("ACE of SPADES", card.showFace());
+    public void canToString() {
+        assertEquals("ACE of SPADES", card.toString());
     }
 
     @Test

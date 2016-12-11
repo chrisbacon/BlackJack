@@ -9,16 +9,16 @@ public class Card {
         this.suit = suit;
         this.rank = rank;
     }
-
-    public String showFace() {
-        return this.rank + " of " + this.suit;
-    }
-
     public Suit getSuit() {
         return this.suit;
     }
 
     public Rank getRank() {
         return this.rank;
+    }
+
+    @Override
+    public String toString() {
+        return this.rank.toString() + " of " + this.suit.toString();
     }
 }
