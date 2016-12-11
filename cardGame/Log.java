@@ -6,8 +6,14 @@ public class Log {
     private Player player;
     private Dealer dealer;
     private boolean draw;
+    private boolean bust;
+    private String move;
+    private boolean playing;
 
     public Log() {
+        this.playing = true;
+        this.draw = false;
+        this.bust = false;
     }
 
     public void setDealer(Dealer dealer) {
@@ -18,11 +24,27 @@ public class Log {
         return this.dealer;
     }
 
-    public void setDrawFlag (boolean flag) {
+    public void setPlaying(boolean flag){
+        this.playing = flag;
+    }
+
+    public boolean getPlaying(){
+        return this.playing;
+    }
+
+    public void setBust(boolean flag) {
+        this.bust = flag;
+    }
+
+    public boolean getBust(){
+        return this.bust;
+    }
+
+    public void setDraw(boolean flag) {
         this.draw = flag;
     }
 
-    public boolean getDrawFlag (){
+    public boolean getDraw(){
         return this.draw;
     }
 
@@ -50,4 +72,11 @@ public class Log {
         return this.loser;
     }
 
+    public void setMove(String move) {
+        this.move = move;
+    }
+
+    public String getMove() {
+        return this.move;
+    }
 }

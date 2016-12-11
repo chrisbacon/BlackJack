@@ -7,12 +7,12 @@ public class View {
         this.log = log;
     }
     public void displayPlayerHand() {
-        Player player = log.getPlayer();
+        Player player = this.log.getPlayer();
         System.out.println(player.getName() + ": " + player.getHandString());
     }
 
     public void displayDealerHand() {
-        Dealer dealer = log.getDealer();
+        Dealer dealer = this.log.getDealer();
         System.out.println(dealer.getName() + ": " + dealer.getHandString());
     }
 
@@ -21,16 +21,23 @@ public class View {
         Player loser = this.log.getLoser();
         String output;
 
-        if (!this.log.getDrawFlag()) {
+        if (!this.log.getDraw()) {
             output = winner.getName() + " wins with " + winner.getHandValue() + " against " + loser.getHandValue() + "!";
         } else {
             output = "Draw! Both the player and the dealer have " + winner.getHandValue();
         }
-        System.out.println(); 
+
+        if (this.log.getBust()) {
+            output = this.log.getPlayer().getName() + " went bust with " + this.log.getPlayer().getHandValue();
+        }
+
+        System.out.println(output); 
 
     }
 
-    public boolean getPlayerMove() {
-        return true;
+    public void getPlayerMove() {
+        System.out.println("Stick or Twist?: ");
+        String move = System.console().readLine().toLowerCase();
+        this.log.setMove(move);
     }
 }

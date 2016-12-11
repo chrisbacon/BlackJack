@@ -13,17 +13,23 @@ public class Runner{
     game.setUp();
     game.dealCardToPlayer();
     game.dealCardToDealer();
+    game.dealCardToDealer();
     
-    boolean keepPlaying = true;
-    while (keepPlaying) {
+    while (log.getPlaying()) {
         game.dealCardToPlayer();
         view.displayPlayerHand();
-        if (game.isPlayerBust()) break ;
-        keepPlaying = view.getPlayerMove();
+        game.checkForBust();
+        if (log.getBust()) {
+            break;
+        }
+        view.getPlayerMove();
+        game.handleMove();
     }
 
-    //game.runDealerTurn();
-    view.displayDealerHand();
+    if (!log.getBust()) {
+        //game.runDealerTurn();
+        view.displayDealerHand();  
+    }   
 
     game.setResult();
     view.displayResult();

@@ -26,7 +26,6 @@ public class Blackjack {
     }
 
     public void setUp() {
-        this.log.setDrawFlag(false);
         this.dealer.shuffle();
     }
 
@@ -38,13 +37,23 @@ public class Blackjack {
         this.dealer.dealCardTo(this.dealer);
     }
 
-    public boolean isPlayerBust() {
-        return Rules.checkForBust(this.player);
+    public void checkForBust() {
+        this.log.setBust(Rules.checkForBust(this.player));
+    }
+
+    public void handleMove() {
+        String move = this.log.getMove();
+        switch (move) {
+            case "stick": this.log.setPlaying(false);
+                          break;   
+            case"twist":  this.log.setPlaying(true);
+                          break;
+        }
     }
 
     public void setResult() {
         if (Rules.didDraw(this.player, this.dealer)) {
-            this.log.setDrawFlag(true);
+            this.log.setDraw(true);
             this.log.setWinner(dealer);
             this.log.setLoser(player);
         } else if (Rules.didPlayerWin(this.player, this.dealer)) {
