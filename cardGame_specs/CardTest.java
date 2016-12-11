@@ -15,7 +15,7 @@ public class CardTest {
 
     @Test
     public void canToString() {
-        assertEquals("ACE of SPADES", card.toString());
+        assertEquals("|A-S|", card.toString());
     }
 
     @Test

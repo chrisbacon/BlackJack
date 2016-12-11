@@ -16,6 +16,15 @@ public class HandTest {
     }
 
     @Test
+    public void canToString() {
+        hand.addCard(card);
+        Card card2 = new Card(Suit.HEARTS, Rank.FIVE);
+        hand.addCard(card2);
+
+        assertEquals("|A-S| |5-H|", hand.toString());
+    }
+
+    @Test
     public void canGetSize() {
         assertEquals(0, hand.getSize());
     }

@@ -19,6 +19,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return this.rank.toString() + " of " + this.suit.toString();
+        return "|" + this.rank.getShortString() + "-" + this.suit.getShortString() + "|";
     }
 }
