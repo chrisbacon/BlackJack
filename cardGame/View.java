@@ -6,8 +6,8 @@ public class View {
     public View(Log log) {
         this.log = log;
     }
-    public void displayPlayerHand() {
-        Player player = this.log.getPlayer();
+    public void displayCurrentPlayerHand() {
+        Player player = this.log.getCurrentPlayer();
         System.out.println(player.getName() + ": " + player.getHandString());
     }
 
@@ -28,7 +28,7 @@ public class View {
         }
 
         if (this.log.getBust()) {
-            output = this.log.getPlayer().getName() + " went bust with " + this.log.getPlayer().getHandValue();
+            output = this.log.getCurrentPlayer().getName() + " went bust with " + this.log.getCurrentPlayer().getHandValue();
         }
 
         System.out.println(output); 

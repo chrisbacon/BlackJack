@@ -7,32 +7,34 @@ public class Runner{
     Blackjack game = new Blackjack(log);
     View view = new View(log);
 
-    game.addPlayer("Chris");
-    game.addDealer("Logan");
+    game.addPlayer("Player");
+    game.addDealer("Dealer");
 
     game.setUp();
-    game.dealCardToPlayer();
-    game.dealCardToDealer();
+    game.dealCardToCurrentPlayer();
     game.dealCardToDealer();
     
-    while (log.getPlaying()) {
-        game.dealCardToPlayer();
-        view.displayPlayerHand();
-        game.checkForBust();
-        if (log.getBust()) {
-            break;
+    int i = 0;
+    while (i<2) {
+        while (log.getPlaying() && !log.getBust()) {
+            game.dealCardToCurrentPlayer();
+            view.displayCurrentPlayerHand();
+            game.checkForBust();
+            if (log.getBust()) {
+                break;
+            }
+            view.getPlayerMove();
+            game.handleMove();
         }
-        view.getPlayerMove();
-        game.handleMove();
+        if (log.getBust()) {
+            break; 
+        }
+        game.nextPlayer();
+        i++;
+        
     }
+        game.setResult();
+        view.displayResult();
 
-    if (!log.getBust()) {
-        //game.runDealerTurn();
-        view.displayDealerHand();  
-    }   
-
-    game.setResult();
-    view.displayResult();
-  }
-    
+  }    
 }

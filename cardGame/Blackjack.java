@@ -17,7 +17,6 @@ public class Blackjack {
 
     public void addPlayer(String name) {
         this.player = new Player(name);
-        this.log.setPlayer(this.player);
     }
 
     public void addDealer(String name) {
@@ -26,11 +25,12 @@ public class Blackjack {
     }
 
     public void setUp() {
+        this.log.setCurrentPlayer(this.player);
         this.dealer.shuffle();
     }
 
-    public void dealCardToPlayer() {
-        this.dealer.dealCardTo(this.player);
+    public void dealCardToCurrentPlayer() {
+        this.dealer.dealCardTo(this.log.getCurrentPlayer());
     }
 
     public void dealCardToDealer() {
@@ -38,7 +38,7 @@ public class Blackjack {
     }
 
     public void checkForBust() {
-        this.log.setBust(Rules.checkForBust(this.player));
+        this.log.setBust(Rules.checkForBust(this.log.getCurrentPlayer()));
     }
 
     public void handleMove() {
@@ -49,6 +49,11 @@ public class Blackjack {
             case"twist":  this.log.setPlaying(true);
                           break;
         }
+    }
+
+    public void nextPlayer() {
+        this.log.setCurrentPlayer(this.dealer);
+        this.log.setPlaying(true);
     }
 
     public void setResult() {
