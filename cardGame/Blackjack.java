@@ -31,23 +31,24 @@ public class Blackjack {
 
     public void dealCardToCurrentPlayer() {
         this.dealer.dealCardTo(this.log.getCurrentPlayer());
+        this.log.setBust(Rules.checkForBust(this.log.getCurrentPlayer()));
     }
 
     public void dealCardToDealer() {
         this.dealer.dealCardTo(this.dealer);
     }
 
-    public void checkForBust() {
-        this.log.setBust(Rules.checkForBust(this.log.getCurrentPlayer()));
-    }
+    // public void checkForBust() {
+        
+    // }
 
     public void handleMove() {
         String move = this.log.getMove();
         switch (move) {
-            case "stick": this.log.setPlaying(false);
-                          break;   
-            case"twist":  this.log.setPlaying(true);
-                          break;
+            case "stick":  this.log.setPlaying(false);
+                           break;   
+            case "twist":  this.log.setPlaying(true);
+                           break;
         }
     }
 

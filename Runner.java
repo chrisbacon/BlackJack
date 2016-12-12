@@ -19,7 +19,6 @@ public class Runner{
         while (log.getPlaying() && !log.getBust()) {
             game.dealCardToCurrentPlayer();
             view.displayCurrentPlayerHand();
-            game.checkForBust();
             if (log.getBust()) {
                 break;
             }
